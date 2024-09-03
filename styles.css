@@ -147,6 +147,8 @@ header {
 
     .menu-toggle {
         display: flex;
+		 right: 0;
+		 position: fixed;
     }
 
     .mobile-menu.show {
@@ -164,7 +166,6 @@ header {
 .category.active {
     display: block; /* Afișează doar categoria activă */
 }
-
 
 		.hero {
 			background-color: #333;
