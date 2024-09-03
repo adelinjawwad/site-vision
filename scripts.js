@@ -1,4 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', function () {
+        mobileMenu.classList.toggle('show');
+    });
+
     const menuLinks = document.querySelectorAll('nav a');
 
     menuLinks.forEach(link => {
@@ -9,6 +16,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 top: targetSection.offsetTop - 60,
                 behavior: 'smooth'
             });
+
+            // Ascunde meniul mobil după ce se face clic pe un link
+            if (mobileMenu.classList.contains('show')) {
+                mobileMenu.classList.remove('show');
+            }
         });
     });
 
