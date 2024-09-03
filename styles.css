@@ -27,23 +27,19 @@
 #limonada .section-header {
 }
 
-/* Stiluri pentru header și logo */
+/* Stiluri pentru logo și meniu */
 header {
     background-color: #000;
     color: #fff;
     padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed; /* Header-ul plutește */
-    top: 0;
-    width: 100%;
-    z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-}
-
-.logo {
-    cursor: pointer; /* Logo-ul devine clicabil */
 }
 
 .logo img {
@@ -51,20 +47,18 @@ header {
     width: auto;
 }
 
-.social-media {
-    display: flex;
-    gap: 15px;
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
 }
 
-.social-media a {
-    color: #e8a92e;
-    text-decoration: none;
-    font-size: 1.2em;
-    transition: color 0.3s ease;
-}
-
-.social-media a:hover {
-    color: #fff;
+.menu-toggle span {
+    background-color: #fff;
+    height: 3px;
+    width: 25px;
+    margin: 3px 0;
+    border-radius: 3px;
 }
 
 /* Stiluri pentru meniul desktop */
@@ -72,11 +66,11 @@ header {
     background-color: #111;
     padding: 10px 0;
     text-align: center;
-    position: fixed; /* Meniul plutește */
-    top: 60px; /* Sub header */
+    position: fixed;
     width: 100%;
+    top: 60px;
     z-index: 999;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .desktop-menu a {
@@ -96,60 +90,72 @@ header {
 
 /* Stiluri pentru meniul mobil */
 .mobile-menu {
-    display: none; /* Ascuns implicit pe desktop */
+    display: none;
     background-color: #111;
     position: fixed;
-    top: 0;
-    right: 0;
+    top: 60px;
+    left: 0;
     width: 100%;
-    height: 100vh;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-    overflow-y: auto; /* Permite scroll pe mobil */
+    height: 100%;
+    overflow-y: auto;
+    padding-top: 60px;
     z-index: 1000;
 }
 
 .mobile-menu a {
     display: block;
     color: #ccc;
-    margin: 10px 0;
+    padding: 15px;
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
+    border-bottom: 1px solid #333;
 }
 
 .mobile-menu a:hover {
     color: #fff;
 }
 
-/* Stiluri pentru butonul de meniu hamburger */
-.menu-toggle {
-    display: none; /* Ascuns implicit pe desktop */
-    cursor: pointer;
+/* Stiluri pentru footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
 }
 
-.menu-toggle span {
-    display: block;
-    width: 25px;
-    height: 3px;
-    background-color: #fff;
-    margin: 5px 0;
+.social-media-footer {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
 }
 
-/* Stiluri pentru vizibilitate pe mobil */
+.social-media-footer a {
+    color: #e8a92e;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
+}
+
+.social-media-footer a:hover {
+    color: #fff;
+}
+
+/* Stiluri pentru mobile */
 @media (max-width: 768px) {
     .desktop-menu {
-        display: none; /* Ascuns pe ecrane mici */
+        display: none;
     }
-    
+
     .menu-toggle {
-        display: block; /* Afișat pe ecrane mici */
+        display: flex;
     }
-    
+
     .mobile-menu.show {
-        display: block; /* Afișat când butonul de meniu este apăsat */
+        display: block;
     }
 }
+
 
 		.hero {
 			background-color: #333;
