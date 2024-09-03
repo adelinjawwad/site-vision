@@ -156,6 +156,14 @@ header {
     }
 }
 
+.category {
+    display: none; /* Ascunde toate categoriile implicit */
+}
+
+.category.active {
+    display: block; /* Afișează doar categoria activă */
+}
+
 
 		.hero {
 			background-color: #333;
