@@ -26,6 +26,8 @@
 #bere .section-header,
 #limonada .section-header {
 }
+
+/* Stiluri pentru header și logo */
 header {
     background-color: #000;
     color: #fff;
@@ -33,7 +35,15 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: fixed; /* Header-ul plutește */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+    cursor: pointer; /* Logo-ul devine clicabil */
 }
 
 .logo img {
@@ -62,10 +72,11 @@ header {
     background-color: #111;
     padding: 10px 0;
     text-align: center;
-    position: fixed;
+    position: fixed; /* Meniul plutește */
+    top: 60px; /* Sub header */
     width: 100%;
-    top: 60px;
     z-index: 999;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
 .desktop-menu a {
@@ -85,15 +96,17 @@ header {
 
 /* Stiluri pentru meniul mobil */
 .mobile-menu {
-    display: none; /* Ascuns implicit */
+    display: none; /* Ascuns implicit pe desktop */
     background-color: #111;
     position: fixed;
-    top: 60px;
+    top: 0;
     right: 0;
     width: 100%;
     height: 100vh;
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto; /* Permite scroll pe mobil */
+    z-index: 1000;
 }
 
 .mobile-menu a {
@@ -111,7 +124,7 @@ header {
 
 /* Stiluri pentru butonul de meniu hamburger */
 .menu-toggle {
-    display: none; /* Ascuns implicit */
+    display: none; /* Ascuns implicit pe desktop */
     cursor: pointer;
 }
 

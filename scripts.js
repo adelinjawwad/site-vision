@@ -1,13 +1,23 @@
 document.addEventListener('DOMContentLoaded', function () {
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
+    const logo = document.getElementById('logo');
 
+    // Toggle pentru meniul mobil
     menuToggle.addEventListener('click', function () {
         mobileMenu.classList.toggle('show');
     });
 
-    const menuLinks = document.querySelectorAll('nav a');
+    // Scroll în partea de sus când se face clic pe logo
+    logo.addEventListener('click', function () {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
 
+    // Scroll către secțiuni
+    const menuLinks = document.querySelectorAll('nav a');
     menuLinks.forEach(link => {
         link.addEventListener('click', function (e) {
             e.preventDefault();
@@ -17,13 +27,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 behavior: 'smooth'
             });
 
-            // Ascunde meniul mobil după ce se face clic pe un link
+            // Închide meniul mobil după clic
             if (mobileMenu.classList.contains('show')) {
                 mobileMenu.classList.remove('show');
             }
         });
     });
 
+    // Schimbă stilul meniului când derulezi
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', function () {
         if (window.scrollY > 100) {
