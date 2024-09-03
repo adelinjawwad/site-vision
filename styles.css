@@ -96,12 +96,14 @@ header {
     top: 60px;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: calc(100% - 60px); /* Asigură că meniul nu se suprapune cu headerul */
     overflow-y: auto;
-    padding-top: 60px;
+    padding-top: 20px; /* Spațiu pentru logo și iconițele sociale */
     z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
+/* Stiluri pentru link-urile din meniul mobil */
 .mobile-menu a {
     display: block;
     color: #ccc;
@@ -110,38 +112,34 @@ header {
     font-weight: bold;
     transition: color 0.3s ease;
     border-bottom: 1px solid #333;
+    text-align: center; /* Centrează textul */
 }
 
+/* Schimbă culoarea link-urilor la hover */
 .mobile-menu a:hover {
     color: #fff;
 }
 
-/* Stiluri pentru footer */
-footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
-
+/* Stiluri pentru iconițele de socializare în footer pe mobil */
 .social-media-footer {
     display: flex;
     justify-content: center;
     gap: 15px;
 }
 
+/* Stiluri pentru iconițele de socializare în footer pe mobil */
 .social-media-footer a {
     color: #e8a92e;
     font-size: 1.5em;
     transition: color 0.3s ease;
 }
 
+/* Schimbă culoarea iconițelor de socializare la hover */
 .social-media-footer a:hover {
     color: #fff;
 }
 
-/* Stiluri pentru mobile */
+/* Responsivitate pentru mobile */
 @media (max-width: 768px) {
     .desktop-menu {
         display: none;
