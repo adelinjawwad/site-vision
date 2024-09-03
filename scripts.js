@@ -1,3 +1,5 @@
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const menuLinks = document.querySelectorAll('nav a');
     const categories = document.querySelectorAll('.category');

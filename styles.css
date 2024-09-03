@@ -158,6 +158,9 @@ header {
 
 .category {
     display: none; /* Ascunde toate categoriile implicit */
+    padding: 60px 20px;
+    background-color: #1c1c1c;
+    color: #fff;
 }
 
 .category.active {
