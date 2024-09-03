@@ -140,15 +140,13 @@ header {
 }
 
 /* Responsivitate pentru mobile */
-@media (max-width: 768px) {
+@media (max-width: 748px) {
     .desktop-menu {
         display: none;
     }
 
     .menu-toggle {
-        right: 0;
         display: flex;
-        position: fixed;
     }
 
     .mobile-menu.show {
