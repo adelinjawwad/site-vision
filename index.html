@@ -25,19 +25,15 @@
 		</div>
 	</header>
 
-	<nav id="navbar" class="desktop-menu">
-		<a href="#cafea"><i class="fas fa-coffee"></i> Cafea</a>
-		<a href="#racoritoare"><i class="fa-solid fa-wine-bottle"></i> Răcoritoare</a>
-		<a href="#bere"><i class="fas fa-beer"></i> Bere</a>
-		<a href="#limonada"><i class="fas fa-lemon"></i> Limonada</a>
-		<a href="#cocktails-vision"><i class="fas fa-cocktail"></i> Cocktails Vision</a>
-		<a href="#cocktails"><i class="fas fa-glass-martini-alt"></i> Cocktails</a>
-		<a href="#whiskey"><i class="fas fa-glass-whiskey"></i> Whiskey</a>
-		<a href="#vinuri"><i class="fas fa-wine-glass-alt"></i> Vinuri</a>
-		<a href="#narghilea"><i class="fas fa-smoking"></i> Narghilea</a>
-		<a href="#burgers"><i class="fas fa-hamburger"></i> Burgers</a>
-		<a href="#goodies"><i class="fas fa-cookie"></i> Goodies</a>
-	</nav>
+<nav id="navbar" class="desktop-menu"></nav>
+
+<script>
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('navbar').innerHTML = data;
+        });
+</script>
 
 	<nav id="mobile-menu" class="mobile-menu">
 		<a href="#cafea"><i class="fas fa-coffee"></i> Cafea</a>
@@ -53,75 +49,25 @@
 		<a href="#goodies"><i class="fas fa-cookie"></i> Goodies</a>
 	</nav>
 
-	<div class="hero">
-		<h1>Bun venit la VisionPub</h1>
-		<p>Descoperă o experiență culinară și vizuală deosebită.</p>
-	</div>
+<div class="hero">
+    <h1>Bun venit la VisionPub</h1>
+    <p>Descoperă o experiență culinară și vizuală deosebită.</p>
+</div>
 
-    <section id="cafea">
-        <h2>Cafea</h2>
-        <div id="cafea-menu" class="menu-grid">
-            <!-- Cafea Items -->
-        </div>
-        <!-- Extras Section -->
-        <div class="section-header">
-            <h3>Extra</h3>
-            <div id="extra-menu" class="menu-grid">
-                <!-- Extra Items -->
-            </div>
-            <!-- Arome Cafea/Frappe Section -->
-            <h3>Arome cafea/frappe</h3>
-            <div id="arome-menu" class="menu-grid">
-                <!-- Arome Cafea Items -->
-            </div>
-        </div>
-    </section>
+<section id="cafea">
+    <h2>Cafea</h2>
+    <div id="cafea-menu" class="menu-grid"></div>
+    <div class="section-header">
+        <h3>Extra</h3>
+        <div id="extra-menu" class="menu-grid"></div>
+        <h3>Arome cafea/frappe</h3>
+        <div id="arome-menu" class="menu-grid"></div>
+    </div>
+</section>
 
 <section id="racoritoare">
-	<h2>Răcoritoare</h2>
-	<div class="menu-grid">
-		<script>
-const racoritoareItems = [
-    { title: "Apă minerală Dorna", price: "8 RON" },
-    { title: "Apă plată Dorna", price: "8 RON" },
-    { title: "Cola cola", price: "10 RON" },
-    { title: "Cola cola zero", price: "9 RON" },
-    { title: "Sprite", price: "10 RON" },
-    { title: "Fanta struguri", price: "10 RON" },
-    { title: "Fanta portocale", price: "10 RON" },
-    { title: "Red bull", price: "15 RON" },
-    { title: "Red bull arome", price: "16 RON" },
-    { title: "Schweppes tonic", price: "10 RON" },
-    { title: "Schweppes pink", price: "10 RON" },
-    { title: "Schweppes mandarin", price: "10 RON" },
-    { title: "Schweppes bitter lemon", price: "10 RON" },
-    { title: "Cappy pere", price: "11 RON" },
-    { title: "Cappy piersici", price: "11 RON" },
-    { title: "Cappy vişine", price: "11 RON" },
-    { title: "Cappy portocale", price: "11 RON" },
-    { title: "Cappy portocale roşii", price: "11 RON" },
-    { title: "Pepsi", price: "10 RON" },
-    { title: "Pepsi twist", price: "10 RON" },
-    { title: "Pepsi max", price: "9 RON" },
-    { title: "Prigat piersici şi caise", price: "11 RON" },
-    { title: "Prigat mere", price: "11 RON" },
-    { title: "Prigat kiwi şi pere", price: "11 RON" },
-    { title: "Prigat banane, măr şi căpşuni", price: "11 RON" },
-    { title: "Mirinda portocale", price: "10 RON" },
-    { title: "Aqua Carpatica plată", price: "8 RON" },
-    { title: "Aqua Carpatica minerală", price: "8 RON" }
-];
-
-			racoritoareItems.forEach(item => {
-				document.write(`
-					<div class="menu-item">
-						<h3>${item.title}</h3>
-						<span>${item.price}</span>
-					</div>
-				`);
-			});
-		</script>
-	</div>
+    <h2>Răcoritoare</h2>
+    <div class="menu-grid" id="racoritoare-menu"></div>
 </section>
 
 <section id="bere">
@@ -133,626 +79,113 @@ const racoritoareItems = [
     </div>
 </section>
 
-<script>
-const products = {
-    bere: [
-        { name: "Heineken 250ML", price: "12 RON" },
-        { name: "Heineken 450ML", price: "14 RON" },
-        { name: "Birra Moretti 400ML", price: "13 RON" },
-        { name: "Carlsberg 250ML", price: "11 RON" },
-        { name: "Carlsberg 400ML", price: "13 RON" },
-        { name: "Kronenbourg Blanc 330ML", price: "20 RON" }
-    ],
-    sticla: [
-        { name: "Heineken 330ML", price: "14 RON" },
-        { name: "Ursus Cooler Cireșe", price: "15 RON" },
-        { name: "Ursus Cooler Lămâie", price: "15 RON" },
-        { name: "Ursus Cooler Ananas și Guava", price: "15 RON" },
-        { name: "Ursus Cooler Grepfrut", price: "15 RON" },
-        { name: "Dacic Fresh Ciders", price: "13 RON" },
-        { name: "Dacic Zmeură", price: "13 RON" },
-        { name: "Dacic Afine", price: "13 RON" },
-        { name: "Dacic Căpșuni și Frăguțe", price: "13 RON" },
-        { name: "Dacic Cherry", price: "13 RON" },
-        { name: "Corona", price: "16 RON" }
-    ]
-};
-    function generateMenuItems(menuItems, containerId) {
-        const container = document.getElementById(containerId);
-        container.innerHTML = menuItems.map(item => `
-            <div class="menu-item">
-                <h4>${item.name}</h4>
-                <span>${item.price}</span>
-            </div>
-        `).join('');
-    }
-
-    generateMenuItems(products.bere, "bereMenu");
-    generateMenuItems(products.sticla, "sticlaMenu");
-</script>
-
 <section id="limonada">
     <h2>Limonadă</h2>
     <div id="limonada-items" class="menu-grid"></div>
-
     <div class="section-header">
         <h3>Piure milkshake/smoothie</h3>
         <div id="milkshake-smoothie-items" class="menu-grid"></div>
-
-
-    <h3>Sirop limonadă</h3>
-    <div id="sirop-limonada-items" class="menu-grid"></div>
-
-    <h3>Extra Shot</h3>
-    <div id="extra-shot-items" class="menu-grid"></div>
-	    </div>
+        <h3>Sirop limonadă</h3>
+        <div id="sirop-limonada-items" class="menu-grid"></div>
+        <h3>Extra Shot</h3>
+        <div id="extra-shot-items" class="menu-grid"></div>
+    </div>
 </section>
-
-<script>
-    const limonada = [
-        {nume: "Limonadă Clasică 450ML", descriere: "30ML FRESH LĂMÂIE, 20ML SIROP ZAHĂR, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "18 RON"},
-        {nume: "Mango și Jasmine 450ML", descriere: "30ML PIURE MANGO, 20ML SIROP JASMINE, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Mango și Pepene Galben 450ML", descriere: "30ML PIURE MANGO, 20ML SIROP PEPMENE GALBEN, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Fructul Pasiunii și Pepene Galben 450ML", descriere: "30ML PIURE FRUCTUL PASIUNII, 20ML SIROP PEPMENE GALBEN, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Kiwi și Pepene Galben 450ML", descriere: "30ML PIURE KIWI, 20ML SIROP PEPMENE GALBEN, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Zmeură și Hibiscus 450ML", descriere: "30ML PIURE ZMEURĂ, 20ML SIROP HIBISCUS, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Yuzu și Zmeură 450ML", descriere: "30ML PIURE YUZU, 30ML PIURE ZMEURĂ, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Yuzu și Watermelon 450ML", descriere: "30ML PIURE YUZU, 30ML PIURE WATERMELON, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Johnny Peach 450ML", descriere: "30ML PIURE PIERSICĂ, 20ML SIROP WATERMELON, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Ananas și Piersică 450ML", descriere: "30ML PIURE ANANAS, 30ML PIURE PIERSICĂ, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Jabuticaba și Spice Redberries 450ML", descriere: "30ML PIURE JABUTICABA, 20ML SIROP SPICE REDBERRIES, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Pere și Ghimbir 450ML", descriere: "30ML PIURE PERE, 20ML SIROP GHIMBIR, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Piersică și Hibiscus 450ML", descriere: "30ML PIURE PIERSICĂ, 20ML SIROP HIBISCUS, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Arată-ne Gustul Tău 450ML", descriere: "30ML PIURE LA ALEGER, 20ML SIROP LA ALEGER, 30ML FRESH LĂMÂIE, MENTĂ, GHEAȚĂ, APĂ MINERALĂ", pret: "20 RON"},
-        {nume: "Fresh Portocale 250ML", descriere: "3 PORTOCALE, GHEAȚĂ", pret: "14 RON"},
-        {nume: "Fresh Măr și Morcov 250ML", descriere: "2 MERE, 1 MORCOV, GHEAȚĂ", pret: "15 RON"},
-        {nume: "Fresh Portocale și Ghimbir 250ML", descriere: "3 PORTOCALE, GHIMBIR, GHEAȚĂ", pret: "15 RON"},
-    ];
-const milkshakeSmoothie = [
-    {nume: "Ananas", pret: "2 RON"},
-    {nume: "Mere Verzi", pret: "2 RON"},
-    {nume: "Grapefrut", pret: "2 RON"},
-    {nume: "Piersică", pret: "2 RON"},
-    {nume: "Kiwi", pret: "2 RON"},
-    {nume: "Banane", pret: "2 RON"},
-    {nume: "Mango", pret: "2 RON"},
-    {nume: "Zmeură", pret: "2 RON"},
-    {nume: "Căpșuni", pret: "2 RON"},
-    {nume: "Fructul Pasiunii", pret: "2 RON"},
-    {nume: "Afine", pret: "2 RON"},
-    {nume: "Jabuticaba", pret: "2 RON"},
-    {nume: "Fructe de Pădure", pret: "2 RON"},
-    {nume: "Yuzu", pret: "2 RON"},
-    {nume: "Pere", pret: "2 RON"},
-];
-const siropLimonada = [
-    {nume: "Pepene Galben", pret: "2 RON"},
-    {nume: "Pepene Roșu", pret: "2 RON"},
-    {nume: "Ginger", pret: "2 RON"},
-    {nume: "Lavandă", pret: "2 RON"},
-    {nume: "Jasmine", pret: "2 RON"},
-    {nume: "Hibiscus", pret: "2 RON"},
-    {nume: "Tamarind", pret: "2 RON"},
-    {nume: "Spice Redberries", pret: "2 RON"},
-    {nume: "Scorțișoară", pret: "2 RON"},
-    {nume: "Yuzu", pret: "2 RON"},
-];
-
-const extraShot = [
-    {nume: "Extra Shot Gin", pret: "7 RON"},
-    {nume: "Extra Shot Vodka", pret: "7 RON"},
-    {nume: "Extra Shot Aperol", pret: "7 RON"},
-    {nume: "Extra Shot Tequila", pret: "7 RON"},
-    {nume: "Extra Shot Rom", pret: "7 RON"},
-];
-    function renderItems(items, containerId) {
-        const container = document.getElementById(containerId);
-        items.forEach(item => {
-            const itemElement = document.createElement('div');
-            itemElement.className = 'menu-item';
-            itemElement.innerHTML = `
-                <h4>${item.nume}</h4>
-                <p>${item.descriere}</p>
-                <span>${item.pret}</span>
-            `;
-            container.appendChild(itemElement);
-        });
-    }
-
-    renderItems(limonada, 'limonada-items');
-    renderItems(milkshakeSmoothie, 'milkshake-smoothie-items');
-    renderItems(siropLimonada, 'sirop-limonada-items');
-    renderItems(extraShot, 'extra-shot-items');
-</script>
 
 <section id="cocktails-vision">
     <h2>Cocktails Vision</h2>
-    <div class="menu-grid" id="cocktails-vision-items">
-        <!-- Elemente meniului vor fi generate dinamic aici -->
-    </div>
+    <div class="menu-grid" id="cocktails-vision-items"></div>
 </section>
-
-<script>
-    const cocktailsVision = [
-        {nume: "Negroni Sour 350ML", descriere: "45ML GIN, 25ML CAMPARI, 30ML AMARETTO, 10ML SUC PORTOCALE, 10ML SIROP ZAHĂR, 25ML FRESH LĂMÂIE, GHEAȚĂ", pret: "26 RON"},
-        {nume: "Tiramisu Cocktail 350ML", descriere: "25ML DISARONNO, 25ML BAILEYS, 1 SHOT ESPRESSO, 10ML SIROP ZAHĂR, GHEAȚĂ", pret: "27 RON"},
-        {nume: "Strawberry Daiquiri 350ML", descriere: "45ML ROM, 30ML PIURE CĂPȘUNI, 35ML FRESH DE LĂMÂIE, 20ML SIROP ZAHĂR, GHEAȚĂ", pret: "26 RON"},
-        {nume: "East 8 350ML", descriere: "45ML VODKA, 15ML APEROL, 10ML SIROP PASSION FRUIT, 20ML SUC ANANAS, 10ML SIROP ZAHĂR, 15ML FRESH LĂMÂIE, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Pornstar Martini 350ML", descriere: "40ML VODKA, 10ML SIROP VANILIE, 50ML PIURE PASSION FRUIT, 50ML SUC PORTOCALE, 10ML SIROP ZAHĂR, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Bourbon Stone Sour 350ML", descriere: "50ML WHISKY, 30ML SUC PORTOCALE, 30ML SIROP ZAHĂR, 25ML FRESH LĂMÂIE, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Cosmopolitan 350ML", descriere: "60ML VODKA, 20ML TRIPLE SEC, 50ML SUC MERIȘOARE, 20ML FRESH LĂMÂIE, GHEAȚĂ", pret: "26 RON"},
-        {nume: "Pineapple Aperol Daiquiri 350ML", descriere: "45ML ROM, 15ML APEROL, 30ML SUC ANANAS, 15ML FRESH DE LĂMÂIE, 15ML SIROP ZAHĂR, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Milanese G&T 350ML", descriere: "30ML GIN, 30ML CAMPARI, APĂ TONICĂ, GHEAȚĂ", pret: "26 RON"},
-        {nume: "Passion Fruit & Vanilla Daiquiri 350ML", descriere: "60ML ROM, 20ML PIURE PASSION FRUIT, 10ML SIROP VANILIE, 25ML FRESH DE LĂMÂIE, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Piña Colada 350ML", descriere: "60ML ROM, 45ML SUC ANANAS, 30ML PIURE COCOS, 15ML FRESH DE LĂMÂIE, GHEAȚĂ", pret: "26 RON"},
-        {nume: "Gin Blackberry 350ML", descriere: "40ML GIN, 10ML SIROP AFINE, 20ML FRESH LĂMÂIE, TONIC, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Gin Orange 350ML", descriere: "40ML GIN, 20ML FRESH LĂMÂIE, TONIC, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Gin Rhubarb & Ginger 350ML", descriere: "40ML GIN, 10ML SIROP AFINE, 5ML GINGER, 20ML FRESH LĂMÂIE, TONIC, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Gin Raspberry 350ML", descriere: "40ML GIN, 10ML PIURE ZMEURĂ, 20ML FRESH LĂMÂIE, TONIC, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Passion Mojito 350ML", descriere: "40ML ROM, 15ML PIURE PASSION FRUIT, 20ML FRESH LĂMÂIE, APĂ MINERALĂ, MENTĂ, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Raspberry Mojito 350ML", descriere: "40ML ROM, 15ML PIURE ZMEURĂ, 20ML FRESH LĂMÂIE, APĂ MINERALĂ, MENTĂ, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Kiwi Mojito 350ML", descriere: "40ML ROM, 15ML PIURE KIWI, 20ML FRESH LĂMÂIE, APĂ MINERALĂ, MENTĂ, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Watermelon Mojito 350ML", descriere: "40ML ROM, 25ML SIROP WATERMELON, 20ML FRESH LĂMÂIE, APĂ MINERALĂ, MENTĂ, GHEAȚĂ", pret: "28 RON"},
-    ];
-
-    function renderItems(items, containerId) {
-        const container = document.getElementById(containerId);
-        items.forEach(item => {
-            const itemElement = document.createElement('div');
-            itemElement.className = 'menu-item';
-            itemElement.innerHTML = `
-                <h4>${item.nume}</h4>
-                <p>${item.descriere}</p>
-                <span>${item.pret}</span>
-            `;
-            container.appendChild(itemElement);
-        });
-    }
-
-    renderItems(cocktailsVision, 'cocktails-vision-items');
-</script>
 
 <section id="cocktails">
     <h2>Cocktails</h2>
-    <div class="menu-grid" id="cocktails-items">
-        <!-- Elemente meniului vor fi generate dinamic aici -->
-    </div>
+    <div class="menu-grid" id="cocktails-items"></div>
 </section>
-
-<script>
-    const cocktails = [
-        {nume: "Mojito 300ML", descriere: "40ML ROM, 20ML SIROP ZAHĂR, 30ML FRESH DE LĂMÂIE, MENTĂ, GHEAȚĂ", pret: "25 RON"},
-        {nume: "Disaronno Sour 24 300ML", descriere: "50ML DISARONNO AMARETTO, 20ML FRESH DE LĂMÂIE, 10ML SIROP DE ZAHĂR, GHEAȚĂ", pret: "25 RON"},
-        {nume: "Disaronno Tonic 300ML", descriere: "40ML DISARONNO AMARETTO, 120ML TONIC, GHEAȚĂ", pret: "25 RON"},
-        {nume: "Cuba Libre 300ML", descriere: "50ML ROM SPICE, LIME, COCA COLA, GHEAȚĂ", pret: "25 RON"},
-        {nume: "Sex on the Beach 300ML", descriere: "50ML VODKA, 30ML SUC DE PIERSICI, 60ML SUC DE PORTOCALE, 60ML SUC DE MERIȘOARE, 1 FELIE DE PORTOCALĂ, GHEAȚĂ", pret: "25 RON"},
-        {nume: "Negroni 300ML", descriere: "30ML GIN, 30ML CAMPARI, GHEAȚĂ", pret: "25 RON"},
-        {nume: "Gin Tonic 300ML", descriere: "50ML GIN, 100ML TONIC, LIME, GHEAȚĂ", pret: "25 RON"},
-        {nume: "Gordon's Pink & Tonic 300ML", descriere: "50ML GIN, 100ML TONIC, LIME, ZMEURĂ, GHEAȚĂ", pret: "25 RON"},
-        {nume: "White Penja Negroni 300ML", descriere: "25ML CAMPARI, 25ML GIN, 10ML PARAGON WHITE PENJA, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Long Island Iced Tea 300ML", descriere: "20ML VODKA, 20ML ROM SPICE, 20ML GIN, 20ML TRIPLESEC, 10ML FRESH DE LĂMÂIE, COCA COLA, GHEAȚĂ", pret: "29 RON"},
-        {nume: "Ginger Americano 300ML", descriere: "30ML CAMPARI, 20ML FRESH DE LĂMÂIE, GHEAȚĂ", pret: "28 RON"},
-        {nume: "Margarita 300ML", descriere: "50ML TEQUILA, 30ML FRESH DE LĂMÂIE, 15ML TRIPLESEC, 5ML SIROP DE ZAHĂR, GHEAȚĂ", pret: "24 RON"},
-        {nume: "Aperol Spritz 300ML", descriere: "90ML PROSECCO, 60ML APEROL, APĂ MINERALĂ, GHEAȚĂ", pret: "22 RON"},
-        {nume: "Hugo 300ML", descriere: "120ML PROSECCO, 30ML SIROP DE SOC, LIME, APĂ MINERALĂ, GHEAȚĂ", pret: "22 RON"},
-    ];
-
-    function renderItems(items, containerId) {
-        const container = document.getElementById(containerId);
-        items.forEach(item => {
-            const itemElement = document.createElement('div');
-            itemElement.className = 'menu-item';
-            itemElement.innerHTML = `
-                <h4>${item.nume}</h4>
-                <p>${item.descriere}</p>
-                <span>${item.pret}</span>
-            `;
-            container.appendChild(itemElement);
-        });
-    }
-
-    renderItems(cocktails, 'cocktails-items');
-</script>
 
 <section id="whiskey">
     <h2>Whiskey</h2>
     <div class="menu-grid" id="whiskey-items"></div>
-    <div class="section-header">
-    <h3>Vodka</h3>
-    <div class="menu-grid" id="vodka-items"></div>
-
-    <h3>Rum</h3>
-    <div class="menu-grid" id="rum-items"></div>
-
-    <h3>Gin</h3>
-    <div class="menu-grid" id="gin-items"></div>
-
-    <h3>Cognac & Brandy</h3>
-    <div class="menu-grid" id="cognac-brandy-items"></div>
-
-    <h3>Shots</h3>
-    <div class="menu-grid" id="shots-items"></div>
-	</div>
 </section>
 
-<script>
-const whiskeyItems = [
-    {nume: "Gentleman Jack", pret: "18 RON"},
-    {nume: "Chivas Regal", pret: "18 RON"},
-    {nume: "Bulleit Bourbon", pret: "22 RON"},
-    {nume: "Glenlivet 12 YO", pret: "24 RON"},
-    {nume: "Berry Bros and Rudd Islay", pret: "30 RON"},
-    {nume: "Kurayoshi Pure Malt", pret: "32 RON"},
-];
+<section id="vodka">
+    <h3>Vodka</h3>
+    <div class="menu-grid" id="vodka-items"></div>
+</section>
 
-const vodkaItems = [
-    {nume: "Ketel One", pret: "15 RON"},
-    {nume: "Ostiya", pret: "15 RON"},
-    {nume: "Opera", pret: "20 RON"},
-    {nume: "Ciroc", pret: "30 RON"},
-];
+<section id="rum">
+    <h3>Rum</h3>
+    <div class="menu-grid" id="rum-items"></div>
+</section>
 
-const rumItems = [
-    {nume: "Bumbu Original", pret: "25 RON"},
-    {nume: "Bumbu Cream", pret: "25 RON"},
-    {nume: "Bumbu Black", pret: "25 RON"},
-    {nume: "Zacapa", pret: "35 RON"},
-];
+<section id="gin">
+    <h3>Gin</h3>
+    <div class="menu-grid" id="gin-items"></div>
+</section>
 
-const ginItems = [
-    {nume: "Opera", pret: "18 RON"},
-    {nume: "Malfy", pret: "18 RON"},
-    {nume: "London", pret: "20 RON"},
-    {nume: "Monkey 47", pret: "20 RON"},
-    {nume: "Knut Hussen", pret: "28 RON"},
-];
+<section id="cognac-brandy">
+    <h3>Cognac & Brandy</h3>
+    <div class="menu-grid" id="cognac-brandy-items"></div>
+</section>
 
-const cognacBrandyItems = [
-    {nume: "Hennessy VS", pret: "28 RON"},
-    {nume: "H by Hine VSOP", pret: "30 RON"},
-    {nume: "Hine Rare VSOP", pret: "35 RON"},
-    {nume: "Vinars VSOP", pret: "20 RON"},
-    {nume: "Martell VS", pret: "18 RON"},
-    {nume: "Zarea XO", pret: "22 RON"},
-    {nume: "Courvoisier VS", pret: "24 RON"},
-];
-
-const shotsItems = [
-    {nume: "Jägermeister", pret: "12 RON"},
-    {nume: "Kahlua", pret: "13 RON"},
-    {nume: "Bumbu Cream", pret: "13 RON"},
-    {nume: "Disaronno", pret: "12 RON"},
-    {nume: "Disaronno Sour", pret: "14 RON"},
-    {nume: "Kamikaze", pret: "12 RON"},
-    {nume: "Don Julio Blanco", pret: "15 RON"},
-    {nume: "Don Julio Anejo", pret: "17 RON"},
-    {nume: "Tequila Premium", pret: "35 RON"},
-];
-
-    function renderItems(items, containerId) {
-        const container = document.getElementById(containerId);
-        items.forEach(item => {
-            const itemElement = document.createElement('div');
-            itemElement.className = 'menu-item';
-            itemElement.innerHTML = `
-                <h4>${item.nume}</h4>
-                <p>${item.descriere}</p>
-                <span>${item.pret}</span>
-            `;
-            container.appendChild(itemElement);
-        });
-    }
-
-    renderItems(whiskeyItems, 'whiskey-items');
-    renderItems(vodkaItems, 'vodka-items');
-    renderItems(rumItems, 'rum-items');
-    renderItems(ginItems, 'gin-items');
-    renderItems(cognacBrandyItems, 'cognac-brandy-items');
-    renderItems(shotsItems, 'shots-items');
-</script>
+<section id="shots">
+    <h3>Shots</h3>
+    <div class="menu-grid" id="shots-items"></div>
+</section>
 
 <section id="vinuri">
     <h2>Vinuri</h2>
-
     <div class="section-header">
         <h3>Crama Serve</h3>
         <div id="crama-serve" class="menu-grid"></div>
-
         <h3>Vinăria Purcari</h3>
         <div id="vinaria-purcari" class="menu-grid"></div>
-
         <h3>Vie Vin Vînju Mare</h3>
         <div id="vie-vin-vinju-mare" class="menu-grid"></div>
-
         <h3>Balla Géza</h3>
         <div id="balla-geza" class="menu-grid"></div>
-
         <h3>Cramele Recaș</h3>
         <div id="cramele-recas" class="menu-grid"></div>
-
         <h3>Domeniile Urlați</h3>
         <div id="domeniile-urlati" class="menu-grid"></div>
-
         <h3>Crama La Salina</h3>
         <div id="crama-la-salina" class="menu-grid"></div>
-
         <h3>Crama Jidvei</h3>
         <div id="crama-jidvei" class="menu-grid"></div>
-
         <h3>Prosecco</h3>
         <div id="prosecco" class="menu-grid"></div>
-
         <h3>Vin la pahar</h3>
         <div id="vin-la-pahar" class="menu-grid"></div>
     </div>
 </section>
 
-<script>
-    const cramaServe = [
-        { nume: "Terra Romana (Rosé Sec)", pret: "135 RON" },
-        { nume: "Terra Romana Chardonnay (Alb Sec)", pret: "135 RON" },
-        { nume: "Terra Romana Milenium (Roșu Sec)", pret: "180 RON" },
-        { nume: "Cuvée Sissi (Rosé Sec)", pret: "165 RON" },
-        { nume: "Cuvée Pacs (Alb Sec)", pret: "165 RON" },
-        { nume: "Cuvée Charlotte (Roșu Sec)", pret: "230 RON" }
-    ];
-
-    const vinariaPurcari = [
-        { nume: "Rosé de Purcari (Rosé Sec)", pret: "140 RON" },
-        { nume: "Sauvignon Blanc de Purcari (Alb Sec)", pret: "140 RON" },
-        { nume: "Chardonnay de Purcari (Alb Sec)", pret: "140 RON" }
-    ];
-
-    const vieVinVinjuMare = [
-        { nume: "Prince Vlad Fetească Neagră (Roșu Sec)", pret: "110 RON" },
-        { nume: "Mirage (Rosé Sec)", pret: "105 RON" },
-        { nume: "Prince Vlad Cabernet Sauvignon (Roșu Sec)", pret: "110 RON" },
-        { nume: "Prince Vlad Chardonnay (Alb Sec)", pret: "110 RON" },
-        { nume: "Mirage Fetească Neagră & Syrah (Roșu Sec)", pret: "110 RON" }
-    ];
-
-    const ballaGeza = [
-        { nume: "Mustoasă de Măderat (Alb Sec)", pret: "125 RON" },
-        { nume: "Roze Cuvée (Rosé Sec)", pret: "125 RON" },
-        { nume: "Cadarca (Roșu Sec)", pret: "135 RON" }
-    ];
-
-    const crameleRecas = [
-        { nume: "Muse White (Alb Demisec)", pret: "175 RON" },
-        { nume: "Muse Night (Rosé Demisec)", pret: "175 RON" },
-        { nume: "Selene Syrah (Roșu Sec)", pret: "200 RON" },
-        { nume: "R.R Tămâioasă Românească (Alb Demidulce)", pret: "120 RON" },
-        { nume: "Regno Recaș (Rosé Demisec)", pret: "120 RON" },
-        { nume: "Regno Recaș (Roșu Sec)", pret: "120 RON" }
-    ];
-
-    const domeniileUrlati = [
-        { nume: "SAAC Cuvee (Alb Sec)", pret: "130 RON" },
-        { nume: "SAAC Cuvee (Rosé Sec)", pret: "130 RON" },
-        { nume: "Fetească Neagră (Roşu Sec)", pret: "95 RON" },
-        { nume: "Fetească Albă (Alb Sec)", pret: "95 RON" },
-        { nume: "Fetească Neagră (Rosé Sec)", pret: "95 RON" },
-        { nume: "INCANTATION Cabernet Sauvignon & Fetească Neagră (Roşu Sec)", pret: "150 RON" }
-    ];
-
-    const cramaLaSalina = [
-        { nume: "Issa Sauvignon Blanc (Alb Sec)", pret: "135 RON" },
-        { nume: "Issa Pinot Noir (Rosé Sec)", pret: "135 RON" }
-    ];
-
-    const cramaJidvei = [
-        { nume: "Mysterium (Rhein Riesling & Sauvignon Blanc) (Alb Sec)", pret: "110 RON" },
-        { nume: "Mysterium (Cabernet Sauvignon & Pinot Noir & Syrah) (Rosé Sec)", pret: "110 RON" },
-        { nume: "Doc Castel Muscat Ottonel (Alb Demidulce)", pret: "125 RON" },
-        { nume: "Iluziv Roze (Rosé Sec)", pret: "90 RON" },
-        { nume: "Iluziv (Sauvignon Blanc & Riesling Italian & Muscat Ottonel) (Alb Sec)", pret: "90 RON" },
-        { nume: "Iluziv (Traminer Roz & Pinot Gris & Chardonnay) (Alb Sec)", pret: "90 RON" },
-        { nume: "Navigo SIAJ Chardonnay (Alb Sec)", pret: "95 RON" },
-        { nume: "Navigo SIAJ Merlot (Roșu Sec)", pret: "100 RON" },
-        { nume: "Navigo SIAJ Rosé (Rosé Sec)", pret: "95 RON" },
-    ];
-
-    const prosecco = [
-        { nume: "Prosecco DOC (Alb Spumant)", pret: "140 RON" },
-        { nume: "Terre Di Marca Prosecco Bio (Alb)", pret: "135 RON" },
-        { nume: "Terre Di Marca Prosecco Bio (Rosé)", pret: "135 RON" },
-        { nume: "Petro Vaselo Bendis Nadir (Alb)", pret: "140 RON" },
-        { nume: "Petro Vaselo Bendis Nadir (Rosé)", pret: "140 RON" },
-        { nume: "Rotari Cuvée 28 (Alb)", pret: "160 RON" },
-        { nume: "Spumante Maeli (Alb)", pret: "160 RON" },
-        { nume: "Zeppelin Pelin Frizzante (Alb)", pret: "90 RON" },
-        { nume: "Zeppelin Pelin Frizzante (Rosé)", pret: "90 RON" },
-        { nume: "Mysterium Alb (Alb)", pret: "335 RON" },
-        { nume: "Mysterium Roze (Rosé)", pret: "335 RON" },
-        { nume: "Scintti FR (Alb)", pret: "80 RON" },
-        { nume: "Scintti Roze Syrah (Rosé)", pret: "80 RON" },
-        { nume: "Scintti Extra Dry Muscat Ottonel (Alb)", pret: "80 RON" }
-    ];
-
-    const vinLaPahar = [
-        { nume: "Vin la pahar (Roșu/Alb/Rosé)", pret: "18 RON" },
-        { nume: "Spritz (Vin alb cu apă minerală)", pret: "20 RON" },
-        { nume: "Prosecco", pret: "21 RON" }
-    ];
-
-    function renderItems(items, containerId) {
-        const container = document.getElementById(containerId);
-        container.innerHTML = ''; // Clear previous content
-        items.forEach(item => {
-            const itemDiv = document.createElement('div');
-            itemDiv.className = 'menu-item';
-            itemDiv.innerHTML = `
-                <h4>${item.nume}</h4>
-                <p class="price">${item.pret}</p>
-            `;
-            container.appendChild(itemDiv);
-        });
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-        renderItems(cramaServe, 'crama-serve');
-        renderItems(vinariaPurcari, 'vinaria-purcari');
-        renderItems(vieVinVinjuMare, 'vie-vin-vinju-mare');
-        renderItems(ballaGeza, 'balla-geza');
-        renderItems(crameleRecas, 'cramele-recas');
-        renderItems(domeniileUrlati, 'domeniile-urlati');
-        renderItems(cramaLaSalina, 'crama-la-salina');
-        renderItems(cramaJidvei, 'crama-jidvei');
-        renderItems(prosecco, 'prosecco');
-        renderItems(vinLaPahar, 'vin-la-pahar');
-    });
-</script>
-
-    <section id="narghilea">
-        <h2>Narghilea</h2>
-        <div class="menu-grid" id="narghilea-items">
-            <!-- Elemente meniului vor fi generate dinamic aici -->
-        </div>
-        <div class="section-header">
-            <h3>Extra Narghilea</h3>
-            <div class="menu-grid" id="extran-items">
-                <!-- Elemente extra vor fi generate dinamic aici -->
-            </div>
-        </div>
-    </section>
-
-    <script>
-        const narghileaItems = [
-            { nume: "Alien Twist", descriere: "(Limetă înghețată)", pret: "80 RON" },
-            { nume: "Richman", descriere: "(Înghețată de zmeură)", pret: "80 RON" },
-            { nume: "Blue Bay", descriere: "(Afine, mentă)", pret: "80 RON" },
-            { nume: "Waterfall", descriere: "(Pepene roșu)", pret: "80 RON" },
-            { nume: "Sexy Green", descriere: "(Mentă)", pret: "80 RON" },
-            { nume: "Seduction", descriere: "(Pepene galben, piersică)", pret: "80 RON" },
-            { nume: "Red Blast", descriere: "(Mentă, zmeură)", pret: "80 RON" },
-            { nume: "Mambo", descriere: "(Căpșuni, kiwi, cocos, piersică)", pret: "80 RON" },
-            { nume: "French Kiss", descriere: "(Struguri, mentă)", pret: "80 RON" },
-            { nume: "Indian Summer", descriere: "(Mango)", pret: "80 RON" },
-            { nume: "Power of Love", descriere: "(Pepene galben, fructul pasiunii, mentă)", pret: "80 RON" },
-            { nume: "Bahama Mama", descriere: "(Ananas, banane, cocos)", pret: "80 RON" },
-            { nume: "Over the Rainbow", descriere: "(Pere, mentă)", pret: "80 RON" },
-            { nume: "American Pie", descriere: "(Mere)", pret: "80 RON" },
-            { nume: "Bikini Sunset", descriere: "(Pepene galben, bubble gum)", pret: "80 RON" },
-            { nume: "Cool Sunrise", descriere: "(Piersică)", pret: "80 RON" },
-            { nume: "Copa Cabana", descriere: "(Pina Colada)", pret: "80 RON" },
-            { nume: "Love 69", descriere: "(Fructul pasiunii, pepene roșu, piersică)", pret: "80 RON" },
-            { nume: "Miss Mango", descriere: "(Mango, fructul pasiunii, piersică)", pret: "80 RON" },
-            { nume: "Honeymoon", descriere: "(Pepene roșu, pepene galben, mere)", pret: "80 RON" },
-            { nume: "Tutti Frutti", descriere: "(Căpșuni, afine, zmeură)", pret: "80 RON" },
-            { nume: "Mister Grape", descriere: "(Struguri, afine)", pret: "80 RON" },
-            { nume: "Lemon & Mint", descriere: "(Lămâie, mentă)", pret: "80 RON" },
-            { nume: "Watermelon", descriere: "(Pepene roșu)", pret: "80 RON" },
-            { nume: "Mint", descriere: "(Mentă)", pret: "80 RON" },
-            { nume: "Lady Killer", descriere: "(Fructe de pădure, pepene galben, mango, mentă)", pret: "80 RON" },
-            { nume: "Mi Amor", descriere: "(Ananas, banană, mentă)", pret: "80 RON" },
-            { nume: "Love 66", descriere: "(Pepene roșu, pepene galben, fructul pasiunii, mentă)", pret: "80 RON" },
-            { nume: "Milkey Mouse", descriere: "(Lapte condensat)", pret: "80 RON" },
-            { nume: "Belgian Waffles", descriere: "(Vafe)", pret: "80 RON" },
-            { nume: "Lemon Cake", descriere: "(Lămâie, cookies)", pret: "80 RON" },
-            { nume: "Pineapple", descriere: "(Ananas)", pret: "80 RON" },
-            { nume: "Lime Spiced Peach", descriere: "(Lime, piersică)", pret: "80 RON" },
-            { nume: "Moscow Night", descriere: "(Mure, lichior, zmeură, afine)", pret: "80 RON" },
-            { nume: "Jelibon", descriere: "(Marmeladă, fructe de pădure)", pret: "80 RON" }
-        ];
-
-        const extranItems = [
-            { nume: "Ice Bazooka", descriere: "O șipcă de narghilea înghețat care răcește aerul inhalat, oferind o experiență revigorantă.", pret: "15 RON" },
-            { nume: "Extra Furtun", descriere: "Fiecare narghilea vine cu un singur furtun, dar se pot atașa până la patru furtune pentru o experiență socială.", pret: "5 RON" },
-            { nume: "Schimbare Cap", descriere: "Înlocuirea creuzetului cu tutun proaspăt și cărbuni noi, pentru o sesiune de narghilea impecabilă.", pret: "40 RON" }
-        ];
-
-        function renderItems(items, containerId) {
-            const container = document.getElementById(containerId);
-            items.forEach(item => {
-                const itemElement = document.createElement('div');
-                itemElement.className = 'menu-item';
-                itemElement.innerHTML = `
-                    <h4>${item.nume}</h4>
-                    <p>${item.descriere}</p>
-                    <span>${item.pret}</span>
-                `;
-                container.appendChild(itemElement);
-            });
-        }
-
-        renderItems(narghileaItems, 'narghilea-items');
-        renderItems(extranItems, 'extran-items');
-    </script>
+<section id="narghilea">
+    <h2>Narghilea</h2>
+    <div class="menu-grid" id="narghilea-items"></div>
+    <div class="section-header">
+        <h3>Extra Narghilea</h3>
+        <div class="menu-grid" id="extran-items"></div>
+    </div>
+</section>
 
 <section id="burgers">
     <h2>Burgers</h2>
-    <div class="menu-grid" id="burger-items">
-        <!-- Elemente meniului vor fi generate dinamic aici -->
-    </div>
+    <div class="menu-grid" id="burger-items"></div>
 </section>
-
-<script>
-    const burgerItems = [
-        { nume: "Black Angus Supreme Burger 500-550 GR", descriere: "Chiflă albă, sos burger, sos alb, carne de burger Black Angus, o felie de cheddar, maioneză, ceapă caramelizată, roșie, bacon, trei inele de ceapă, cartofi prăjiți.", pret: "55 RON" },
-        { nume: "Ultimate Prime Burger 450-500 GR", descriere: "Chiflă albă, sos burger, sos alb, salată, carne de burger Black Angus, o felie de cheddar, sos sweet chili, ardei gras roșu, ceapă, roșie, bacon, trei inele de ceapă, cartofi prăjiți.", pret: "55 RON" },
-        { nume: "Burger Vision Deluxe 550-600 GR", descriere: "Chiflă neagră, sos burger, sos alb, salată, carne de burger Kettle, o felie de cheddar, ardei gras la grătar, ceapă caramelizată, bacon, trei inele de ceapă, cartofi prăjiți.", pret: "58 RON" },
-        { nume: "Burger Vision Deluxe v2.0 550-600 GR", descriere: "Chiflă neagră, sos burger, sos alb, sos de ceapă, salată, carne de burger Kettle, o felie de cheddar, ardei gras roșu, ceapă, bacon, trei inele de ceapă, cartofi prăjiți.", pret: "58 RON" },
-        { nume: "Chicken Royal Burger 350-400 GR", descriere: "Chiflă albă, sos burger, sos alb, pui la grătar, sos sweet chili, ardei gras roșu, sos miere și muștar, roșie, trei inele de ceapă, cartofi prăjiți.", pret: "50 RON" },
-        { nume: "Crispy Chicken Bliss 350-400 GR", descriere: "Chiflă albă, sos burger, sos alb, șnițel de pui, sos sweet chili, ardei gras roșu, sos miere și muștar, roșie, trei inele de ceapă, cartofi prăjiți.", pret: "55 RON" },
-        { nume: "BBQ Pulled Pork Burger 500-550 GR", descriere: "Chiflă neagră, sos burger, maioneză, carne pulled pork (fâșii gătite lent de porc), sos BBQ, sos de usturoi, castraveți murați, brânză cheddar, bacon prăjit, jalapeño, trei inele de ceapă, cartofi prăjiți.", pret: "60 RON" },
-        { nume: "Smash Burger 500-550 GR", descriere: "Chiflă albă (glazurată cu ou), două bucăți de carne smash, două felii de cheddar, salată verde, sos de usturoi, castraveți murați, maioneză, trei inele de ceapă, cartofi prăjiți.", pret: "55 RON" }
-    ];
-
-    function renderItems(items, containerId) {
-        const container = document.getElementById(containerId);
-        items.forEach(item => {
-            const itemElement = document.createElement('div');
-            itemElement.className = 'menu-item';
-            itemElement.innerHTML = `
-                <h3>${item.nume}</h3>
-                <p>${item.descriere}</p>
-                <span>${item.pret}</span>
-            `;
-            container.appendChild(itemElement);
-        });
-    }
-
-    renderItems(burgerItems, 'burger-items');
-</script>
 
 <section id="goodies">
     <h2>Goodies</h2>
-    <div class="menu-grid" id="goodies-items">
-        <!-- Elemente meniului vor fi generate dinamic aici -->
-    </div>
+    <div class="menu-grid" id="goodies-items"></div>
 </section>
 
-<script>
-    const goodiesItems = [
-        { nume: "Chicken Prestige 450-500 GR", descriere: "Șnițel Palermo, cremă de brânză, sos guacamole, chipsuri tortilla, cartofi prăjiți, sos la alegere.", pret: "57 RON" },
-        { nume: "Royal Chicken Șnițel 450-500 GR", descriere: "Șnițel Palermo, cașcaval, salată de roșii, cartofi prăjiți, sos la alegere.", pret: "52 RON" },
-        { nume: "Crispy Deluxe 350-400 GR", descriere: "4 crispy, cartofi prăjiți, salată de roșii, sos la alegere.", pret: "42 RON" },
-        { nume: "Cartofi Pulled Pork 400 GR", descriere: "Cartofi prăjiți, fâșii de carne de porc, sos de usturoi.", pret: "40 RON" },
-        { nume: "Magic Mici 250-300 GR", descriere: "4 mici (mari), cartofi prăjiți, muștar / ketchup, 2 felii de pâine.", pret: "40 RON" },
-        { nume: "Cartofi cu Cheddar, Bacon & Jalapeño 300-350 GR", descriere: "Cartofi prăjiți zig-zag, bacon prăjit, jalapeño, sos cheddar.", pret: "32 RON" },
-        { nume: "Cartofi cu Cheddar & Bacon 250-300 GR", descriere: "Cartofi prăjiți zig-zag, bacon prăjit, sos cheddar.", pret: "30 RON" },
-        { nume: "Cartofi Feta 250-300 GR", descriere: "Cartofi prăjiți zig-zag, brânză feta.", pret: "27 RON" },
-        { nume: "Cartofi Feta & Bacon 300-350 GR", descriere: "Cartofi prăjiți zig-zag, brânză feta, bacon prăjit.", pret: "32 RON" },
-        { nume: "Cartofi Prăjiți Zig-Zag 250-300 GR", descriere: "Ketchup, usturoi, sos de ceapă.", pret: "27 RON" },
-        { nume: "Nachos 250-300 GR", descriere: "Picant / Nepicant, cheese dip, dip guacamole, salsa dip (1 sos la alegere).", pret: "27 RON" }
-    ];
-
-    function renderItems(items, containerId) {
-        const container = document.getElementById(containerId);
-        items.forEach(item => {
-            const itemElement = document.createElement('div');
-            itemElement.className = 'menu-item';
-            itemElement.innerHTML = `
-                <h3>${item.nume}</h3>
-                <p>${item.descriere}</p>
-                <span>${item.pret}</span>
-            `;
-            container.appendChild(itemElement);
-        });
-    }
-
-    renderItems(goodiesItems, 'goodies-items');
-</script>
+<script src="cafea.js"></script>
+<script src="racoritoare.js"></script>
+<script src="bere.js"></script>
+<script src="limonada.js"></script>
+<script src="cocktails.js"></script>
+<script src="whiskey.js"></script>
+<script src="vinuri.js"></script>
+<script src="narghilea.js"></script>
+<script src="food.js"></script>
 
 	<footer>
 		<div class="social-media-footer">
