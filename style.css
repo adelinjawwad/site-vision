@@ -1,0 +1,80 @@
+/* General */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #1a0033, #660099);
+    font-family: 'Poppins', sans-serif;
+    overflow: hidden;
+}
+
+/* Carte */
+.book {
+    position: relative;
+    width: 90vw;
+    height: 60vh;
+    perspective: 2000px;
+}
+
+/* Pagină */
+.page {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    transform-origin: right center;
+    transform: rotateY(0);
+    transition: transform 1s ease-in-out;
+}
+
+/* Contenut pagină */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to bottom right, #ffefba, #ffffff);
+}
+
+h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+/* Animații de răsfoire */
+.page:nth-child(1) {
+    z-index: 3;
+}
+
+.page:nth-child(2) {
+    z-index: 2;
+    transform: rotateY(-180deg);
+}
+
+.page:nth-child(3) {
+    z-index: 1;
+    transform: rotateY(-180deg);
+}
+
+.page.open:nth-child(2) {
+    transform: rotateY(0);
+}
+
+.page.open:nth-child(3) {
+    transform: rotateY(0);
+}
+
+/* Mobile-friendly */
+@media screen and (max-width: 430px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+}
